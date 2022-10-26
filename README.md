@@ -4,7 +4,7 @@ This is for the CME project
 
 the instruction is simple follow the steps below
 
-git clone https://github.com/ntt2k/OnlineBanking.git
+git clone https://github.com/ngjingjie/cme-project.git
 cd OnlineBanking
 docker-compose up
 
