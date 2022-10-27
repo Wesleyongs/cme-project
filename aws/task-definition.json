@@ -149,7 +149,7 @@
     "memory": "3072",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
-        "operatingSystemFamily": "WINDOWS_SERVER_2019_CORE"
+        "operatingSystemFamily": "LINUX"
     },
     "registeredAt": "2022-10-27T04:02:55.630Z",
     "registeredBy": "arn:aws:iam::087921534622:root",
