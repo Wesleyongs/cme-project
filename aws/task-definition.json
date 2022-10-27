@@ -1,25 +1,165 @@
 {
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:087921534622:task-definition/online-banking-dev:1",
+    "containerDefinitions": [{
+            "name": "db",
+            "image": "mysql:5.7",
+            "cpu": 0,
+            "links": [],
+            "portMappings": [{
+                    "containerPort": 32000,
+                    "hostPort": 32000,
+                    "protocol": "tcp"
+                },
+                {
+                    "containerPort": 3306,
+                    "hostPort": 3306,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": false,
+            "entryPoint": [],
+            "command": [],
+            "environment": [{
+                    "name": "MYSQL_DATABASE",
+                    "value": "onlinebanking"
+                },
+                {
+                    "name": "MYSQL_PASSWORD",
+                    "value": "password"
+                },
+                {
+                    "name": "MYSQL_HOST",
+                    "value": "test-database-1.cft4pyst2fds.ap-southeast-1.rds.amazonaws.com"
+                },
+                {
+                    "name": "MYSQL_ROOT_PASSWORD",
+                    "value": "password"
+                },
+                {
+                    "name": "MYSQL_USER",
+                    "value": "admin"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [],
+            "dnsServers": [],
+            "dnsSearchDomains": [],
+            "extraHosts": [],
+            "dockerSecurityOptions": [],
+            "dockerLabels": {},
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/online-banking-dev",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        },
+        {
+            "name": "frontend",
+            "image": "087921534622.dkr.ecr.us-east-1.amazonaws.com/onlinebanking",
+            "cpu": 0,
+            "links": [],
+            "portMappings": [{
+                "containerPort": 8080,
+                "hostPort": 8080,
+                "protocol": "tcp"
+            }],
+            "essential": true,
+            "entryPoint": [],
+            "command": [],
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [],
+            "dnsServers": [],
+            "dnsSearchDomains": [],
+            "extraHosts": [],
+            "dockerSecurityOptions": [],
+            "dockerLabels": {},
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/online-banking-dev",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "online-banking-dev",
+    "taskRoleArn": "arn:aws:iam::087921534622:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::087921534622:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [{
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "inferenceAccelerators": [],
-    "containerDefinitions": [{
-        "name": "online-bank",
-        "image": "ehttpd:2.4",
-        "resourceRequirements": null,
-        "essential": true,
-        "portMappings": [{
-            "hostPort": 80,
-            "protocol": "tcp",
-            "containerPort": 80
-        }]
-    }],
-    "volumes": [],
-    "networkMode": "awsvpc",
-    "memory": "512",
-    "cpu": "256",
-    "executionRoleArn": "arn:aws:iam::183201325337:role/ecsTaskExecutionRole",
-    "family": "first-run-task-definition",
-    "taskRoleArn": "",
-    "placementConstraints": []
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "WINDOWS_SERVER_2019_CORE"
+    },
+    "registeredAt": "2022-10-27T04:02:55.630Z",
+    "registeredBy": "arn:aws:iam::087921534622:root",
+    "tags": [{
+            "key": "ecs:taskDefinition:createdFrom",
+            "value": "ecs-console-v2"
+        },
+        {
+            "key": "ecs:taskDefinition:stackId",
+            "value": "arn:aws:cloudformation:us-east-1:087921534622:stack/ECS-Console-V2-TaskDefinition-eb5d4c97-2cc1-4a91-af6e-784f5eb1eef6/38abea40-55ac-11ed-8a22-0e4be547c027"
+        }
+    ]
 }
