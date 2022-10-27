@@ -60,7 +60,7 @@
             "name": "frontend",
             "image": "087921534622.dkr.ecr.us-east-1.amazonaws.com/onlinebanking",
             "cpu": 0,
-            "links": ["db"],
+            "links": [],
             "portMappings": [{
                 "containerPort": 8080,
                 "hostPort": 8080,
