@@ -102,7 +102,6 @@
     "family": "online-banking-dev",
     "taskRoleArn": "arn:aws:iam::087921534622:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::087921534622:role/ecsTaskExecutionRole",
-    "networkMode": "awsvpc",
     "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
