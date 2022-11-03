@@ -1,7 +1,7 @@
 {
     "taskDefinitionArn": "arn:aws:ecs:us-east-1:087921534622:task-definition/online-banking-dev:1",
     "containerDefinitions": [{
-        "name": "onlinebanking",
+        "name": "online-banking",
         "image": "087921534622.dkr.ecr.us-east-1.amazonaws.com/onlinebanking",
         "cpu": 0,
         "links": [],
