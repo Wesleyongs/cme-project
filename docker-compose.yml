@@ -14,10 +14,10 @@ services:
     ports:
       - "32000:3306"
     environment:
-      MYSQL_HOST: test-database-1.cft4pyst2fds.ap-southeast-1.rds.amazonaws.com
+      MYSQL_HOST: cloudbank-database-1.cft4pyst2fds.ap-southeast-1.rds.amazonaws.com
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: onlinebanking
       MYSQL_USER: admin
-      MYSQL_PASSWORD: password
+      MYSQL_PASSWORD: 2022Cloudsmu
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
